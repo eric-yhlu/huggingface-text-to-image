@@ -134,8 +134,7 @@ with gr.Blocks(css=css) as demo:
                 )
 
         gr.Examples(examples=examples, inputs=[prompt])
-    gr.on(
-        triggers=[run_button.click, prompt.submit],
+    run_button.click(
         fn=infer,
         inputs=[
             prompt,
