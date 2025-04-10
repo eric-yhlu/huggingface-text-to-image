@@ -4,4 +4,4 @@ invisible_watermark
 torch
 transformers
 xformers
-gradio>=3.50
+gradio>=3.57.1
