@@ -1,22 +1,29 @@
 name: Sync to Hugging Face hub
+
 on:
   push:
     branches: [main]
-  
-  # to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
+      - name: Set Git identity  
+        run: |
+          git config --global user.email "eric@example.com"
+          git config --global user.name "eric"
+
       - name: Add remote 
         env:
           HF: ${{ secrets.HF }}
         run: git remote add space https://Eric0804:$HF@huggingface.co/spaces/Eric0804/text-to-image
+
       - name: Push to hub
         env:
           HF: ${{ secrets.HF }}
