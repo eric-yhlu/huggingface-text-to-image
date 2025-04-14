@@ -85,8 +85,8 @@ with gr.Blocks(css=css) as demo:
             negative_prompt = gr.Text(
                 label="Negative prompt",
                 max_lines=1,
-                placeholder="Enter a negative prompt",
-                visible=False,
+                placeholder="Enter a negative prompt"
+               
             )
 
             seed = gr.Slider(
